@@ -1,0 +1,25 @@
+extends layout
+
+// USE BLOCK CONTENT TO RENDER TEMPLATE
+block content
+    div.row
+
+        // KEEP CONTENT TO THE LEFT
+        // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
+        if (!currentUser)
+            //p.tip-add-message Login or register to add a tip
+
+        div.col-xs-12.col-md-8.tip-form
+            // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
+            if (currentUser)
+                each itinerary, i in itineraries
+                    .row.tip
+                        div #{itinerary.name}
+
+        // div.hidden-sm
+        // MAP HERE TO KEEP ON RIGHT SIDE
+        div#map.col-xs-12.col-md-4
+
+    script(src='markerclusterer.js')
+    script(src='js-map.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=' + process.env.MAP_KEY + '&callback=initMap')

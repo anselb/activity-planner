@@ -1,0 +1,15 @@
+nav.navbar.navbar-default
+    .container-fluid
+        .navbar-header
+            a.navbar-brand(href='/')
+                | Activity Finder
+        if (currentUser)
+            .pull-right
+                a.btn.btn-default.navbar-btn(href='/itineraries/new') New Itinerary
+            .pull-right
+                a.btn.btn-default.navbar-btn(href='/logout') Logout
+        else
+            .pull-right
+                a.btn.btn-default.navbar-btn(href='/login') Login
+            .pull-right
+                a.btn.btn-default.navbar-btn(href='/sign-up') Sign Up
