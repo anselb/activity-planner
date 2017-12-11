@@ -18,14 +18,46 @@ module.exports = function(app) {
 
     // GET create actitity form - yes, will be a search
     app.get('/itineraries/:itinId/activities/new', function (req, res) {
-        res.render('activities-new', { currentUser: req.user })
+        const queryTerm = encodeURIComponent(req.query.term);
+        const queryLocation = encodeURIComponent(req.query.location);
+
+        if (!req.query.term) {
+            console.log(queryTerm)
+            res.render('activities-new', { itineraryId: req.params.itinId, term: "", location: "", currentUser: req.user })
+        } else {
+            const searchRequest = {
+                term: queryTerm,
+                location: queryLocation
+            }
+
+            yelp.accessToken(YELP_ID, YELP_KEY).then(response => {
+                const client = yelp.client(response.jsonBody.access_token);
+                return client.search(searchRequest)
+            }).then(response => {
+                return response.jsonBody.businesses
+            }).then(result => {
+                res.render('activities-new', { itineraryId: req.params.itinId, term: req.query.term, location: req.query.location, currentUser: req.user, yelpDatas: result });
+            }).catch(err => {
+                console.log(err)
+            });
+
+            // Promise.all([yelpAPI]).then(APIdata => {
+            //     console.log(APIdata);
+            //     // res.render('home', { itineraryId: req.params.itinId, term: req.query.term, location: req.query.location, currentUser: req.user, yelpDatas: APIdata[0] });
+            // }).catch(err => {
+            //     console.log(err)
+            // })
+        }
+
     });
 
     // POST new activity - yes, will be result from search
     app.post('/itineraries/:itinId/activities', function (req, res) {
-        Activity.create(req.body).catch(function (err) {
-            console.log(err)
-        });
+        console.log(req.params.itinId)
+        // req.body.ItineraryId = req.params.itinId
+        // Activity.create(req.body).catch(function (err) {
+        //     console.log(err)
+        // });
         res.redirect('/')
     });
 

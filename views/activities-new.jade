@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .row
+        .col-sm-6.offset-sm-3
+            form(action='/itineraries/#{itineraryId}/activities/new')
+                .form-group
+                    label(for='search-term')="Search Term"
+                    input#search-term(name='term', type='text', value='#{term}')
+                .form-group
+                    label(for='search-location')="Location"
+                    input#search-location(name='location', type='text', value='#{location}')
+                .text-right
+                    button.btn.btn-primary(type='submit') Search
+            
+            if (yelpDatas)
+                each yelpData in yelpDatas
+                    .media
+                        .media-left
+                            a(href='#{yelpData.url}')
+                                img.media-object(style="width: auto; height: 80px;" src='#{yelpData.image_url}', alt='#{yelpData.name}')
+                        .media-body
+                            a(href='#{yelpData.url}')
+                                h4.media-heading #{yelpData.name}
+                            p Rating: #{yelpData.rating}
+                            button(type='button').activity-add.btn.btn-primary Add to Itinerary
