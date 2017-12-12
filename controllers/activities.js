@@ -10,7 +10,12 @@ const EVENTBRITE_KEY = process.env.EVENTBRITE_KEY
 const Activity = require('../db/models/index').Activity;
 
 module.exports = function(app) {
-    // GET activity index - no
+    // GET activity index - yes, for map
+    app.get('/itineraries/:itinId/activities/', function (req, res) {
+        Activity.findAll({ where : { ItineraryId : req.params.itinId } }).then(function (activities) {
+            res.send(activities)
+        })
+    });
 
     // GET single activity - no
 
