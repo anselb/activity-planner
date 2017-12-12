@@ -66,7 +66,11 @@ module.exports = function(app) {
     });
 
     // PUT (edit) activity - yes, when the activity is changed
-    
+    app.put('/itineraries/:itinId/activities/:actId', function (req, res) {
+        Activity.findByIdAndUpdate(req.params.actId, req.body, function (err, activity) {
+            res.redirect('/itineraries/' + req.params.itinId)
+        })
+    });
 
     // DELETE activity - yes, can remove from itinerary
     app.delete('/itineraries/:itinId/activities/:actId', function (req, res) {

@@ -24,7 +24,9 @@ module.exports = function (app) {
     // GET single itinerary - yes, see a single itinerary by itself
     app.get('/itineraries/:id', function (req, res) {
         Itinerary.findById(req.params.id).then((itinerary) => {
-            res.render('itineraries-show', { currentUser: req.user, itinerary: itinerary })
+            Activity.findAll({ where : { ItineraryId : req.params.id } }).then(function (activities) {
+                res.render('itineraries-show', { currentUser: req.user, itinerary: itinerary, activities: activities })
+            })
         })
     });
 
@@ -42,6 +44,7 @@ module.exports = function (app) {
         // TODO :: ADD VALIDATION, CHECK FORM IN NOT EMPTY
         console.log(req.body)
         req.body.UserId = req.user.id
+        req.body.date = req.body.date
         Itinerary.create(req.body).catch(function (err) {
             console.log(err)
         });
