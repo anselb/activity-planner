@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     // GET edit activity form - yes, change times
 
-    // GET create actitity form - yes, will be a search
+    // GET create activity form - yes, will be a search
     app.get('/itineraries/:itinId/activities/new', function (req, res) {
         const queryTerm = encodeURIComponent(req.query.term);
         const queryLocation = encodeURIComponent(req.query.location);
