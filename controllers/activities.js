@@ -54,14 +54,19 @@ module.exports = function(app) {
     // POST new activity - yes, will be result from search
     app.post('/itineraries/:itinId/activities', function (req, res) {
         console.log(req.params.itinId)
-        // req.body.ItineraryId = req.params.itinId
-        // Activity.create(req.body).catch(function (err) {
-        //     console.log(err)
-        // });
-        res.redirect('/')
+        console.log(req.body)
+
+        req.body.ItineraryId = req.params.itinId
+        Activity.create(req.body).catch(function (err) {
+            console.log(err)
+        });
+
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({success : 'Updated Successfully', status : 200, redirect : '/'}));
     });
 
     // PUT (edit) activity - yes, when the activity is changed
+    
 
     // DELETE activity - yes, can remove from itinerary
     app.delete('/itineraries/:itinId/activities/:actId', function (req, res) {

@@ -18,9 +18,10 @@ block content
                     .media
                         .media-left
                             a(href='#{yelpData.url}')
-                                img.media-object(style="width: auto; height: 80px;" src='#{yelpData.image_url}', alt='#{yelpData.name}')
+                                img.media-object(style="width: auto; height: 90px;" src='#{yelpData.image_url}', alt='#{yelpData.name}')
                         .media-body
                             a(href='#{yelpData.url}')
                                 h4.media-heading #{yelpData.name}
-                            p Rating: #{yelpData.rating}
-                            button(type='button').activity-add.btn.btn-primary Add to Itinerary
+                            p.address #{yelpData.location.address1}, #{yelpData.location.city}
+                            p.rating Rating: #{yelpData.rating}
+                            button(type='button').activity-add.btn-xs.btn-primary Add to Itinerary
