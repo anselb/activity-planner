@@ -52,7 +52,7 @@ function initMap(zoom, pos) {
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    initMap(15, pos)
+    initMap(14, pos)
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
         'Error: The Geolocation service failed.' :
@@ -73,7 +73,7 @@ function getLocation() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             };
-            initMap(14, pos)
+            initMap(13, pos)
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
