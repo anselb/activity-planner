@@ -53,9 +53,14 @@ module.exports = function (app) {
 
     // PUT (edit) itinerary - yes, save changes
     app.put('/itineraries/:id', function (req, res) {
-        Itinerary.findByIdAndUpdate(req.params.id, req.body, function (err, itinerary) {
-            res.redirect('/itineraries/' + itineraries.id)
+        Itinerary.findById(req.params.id).then((itinerary) => {
+            itinerary.update(req.body);
+            res.redirect('/itineraries/' + itinerary.id + '/')
         })
+        // Itinerary.findByIdAndUpdate(req.params.id, req.body, function (err, itinerary) {
+        //     console.log(itinerary)
+        //     res.redirect('/itineraries/' + itinerary.id)
+        // })
     });
 
     // DELETE itinerary - yes
