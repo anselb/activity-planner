@@ -16,3 +16,6 @@ block content
                     textarea#itinerary-description.form-control(name='description', rows="3", placeholder="Description (optional)", value='#{itinerary.description}')
                 .text-right
                     button.btn.btn-primary(type='submit') Create Itinerary
+                    
+    script.
+        document.getElementById("itinerary-date").defaultValue = "#{itinerary.date}";

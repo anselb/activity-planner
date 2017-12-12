@@ -31,7 +31,7 @@ module.exports = function (app) {
     });
 
     // GET itinerary edit form - yes, change items of the itinerary
-    app.get('/itineraries/:id', function (req, res) {
+    app.get('/itineraries/:id/edit', function (req, res) {
         Itinerary.findById(req.params.id).then((itinerary) => {
             res.render('itineraries-edit', { currentUser: req.user, itinerary: itinerary })
         })

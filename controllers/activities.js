@@ -67,7 +67,7 @@ module.exports = function(app) {
         });
 
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({success : 'Updated Successfully', status : 200, redirect : '/'}));
+        res.send(JSON.stringify({success : 'Updated Successfully', status : 200, redirect : '/itineraries/' + req.params.itinId + '/'}));
     });
 
     // PUT (edit) activity - yes, when the activity is changed
