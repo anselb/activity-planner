@@ -19,7 +19,7 @@ block content
                 each activity in activities
                     .media
                         .media-body
-                            a(href='#{activity.url}')
+                            a(href='#{activity.activityUrl}')
                                 h4.media-heading #{activity.name}
                             p.address #{activity.location}
             a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
