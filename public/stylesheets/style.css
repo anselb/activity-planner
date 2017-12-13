@@ -5,3 +5,23 @@
     position: relative;
     top: 0;
 }
+
+img {
+	width: 100px !important;
+	height: 100px !important;
+}
+
+.navbar-brand {
+	color: white;
+}
+
+.container {
+    margin-top: 70px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

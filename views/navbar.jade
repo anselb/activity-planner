@@ -1,8 +1,7 @@
-nav.navbar.navbar-default
-    .container-fluid
-        .navbar-header
-            a.navbar-brand(href='/')
-                | Activity Finder
+nav.navbar.bg-primary.row.navbar-fixed-top
+    div.col-xs-12.col-md-9
+        a.navbar-brand(href="/") Activities Planner
+    div.col-xs-12.col-md-3
         if (currentUser)
             .pull-right
                 a.btn.btn-default.navbar-btn(href='/itineraries/new') New Itinerary
