@@ -38,6 +38,7 @@ module.exports = function (app) {
     });
 
     // GET itinerary index - yes, show a user's list of itineraries
+    // completed as index page
 
     // POST new itinerary - yes
     app.post('/itineraries', function (req, res) {
