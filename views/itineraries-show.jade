@@ -7,8 +7,8 @@ block content
                 h1
                     | #{itinerary.name}
                     small.date
-                        a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
-                            | Edit
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
+                        | Edit
                 p #{itinerary.description}
     
     .row
@@ -31,4 +31,4 @@ block content
     script.
         var date = new Date('#{itinerary.date}');
         var newDate = date.toLocaleDateString()
-        $('.date').text(" " + newDate);
+        $('.date').text(" " + newDate + " ");
