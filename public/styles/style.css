@@ -1,0 +1,230 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    font-family: Helvetica;
+
+}
+input {
+    color: black;
+    padding-left: 4px;
+}
+
+li, a {
+    text-decoration: none;
+    list-style: none;
+}
+li, a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: #fff;
+    z-index: 1;
+}
+
+/* ===============   MAP CONTAINER STYLES    */
+
+
+#map{
+    /*margin-top: -20px;*/
+    width: 100%;
+    float: right;
+    height: 90%;
+}
+
+
+/* ===============   PAGE CONTAINER STYLES    */
+
+.row {
+    max-width: 100vw;
+    margin: 0 0 12px 0;
+}
+
+
+/* ===============   NAVBAR STYLES    */
+
+.navbar {
+    margin: 0;
+}
+
+.nav-user {
+    padding-right: 27px;
+    padding-left: 8px;
+}
+
+/* ===============   STYLES    */
+
+label {
+    text-transform: capitalize;
+}
+
+/* ======   GET THE TEXT TO COMMENTS TO SCROLL INDEPENDENTLY */
+
+
+.activitybox-wrapper {
+    /*position: relative;*/
+    height: 100%;
+}
+
+.activity-form,
+.activity-add-message {
+    padding: 18px 60px;
+}
+
+.activitybox *,
+.activity-form-content * {
+    font-size: 1.1em;
+}
+
+.activity-form-content {
+    padding-bottom: 27px;
+    border-bottom: 2px solid #000;
+}
+
+.activity-form-content > div > h2 {
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+
+/* ===============   VOTE-CONTENT STYLES    */
+
+.glyphicon.vote,
+.glyphicon.delete {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 50%;
+}
+
+
+/* ===============   GLYPHICON STYLES    */
+
+.glyphicon.auth {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: .5em;
+    margin-left: .5em;
+    width: 120px;
+    padding: .5em 0em;
+}
+
+li.glyphicon.auth:hover{
+    background-color: rgb(64, 101, 221);
+}
+
+
+
+/* ===============   LOGIN STYLES    */
+
+.auth-title {
+    font-size: 2.5em;
+}
+
+.auth-form {
+    margin-top: 27px;
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 40px 16px 40px 16px;
+}
+
+.form-control {
+    font-size: 1.7em;
+    margin: 16px 0;
+    height: 44px;
+}
+
+.btn {
+    font-size: 1.4em;
+    width: 28%;
+    height: 44px;
+}
+
+/* ===============   ERROR MESSAGE STYLES    */
+
+.alert-danger,
+.alert-success,
+.alert-info {
+    font-size: 2.4em;
+    min-height: 44px;
+}
+
+.activity-add-message {
+    position: fixed;
+    text-align: center;
+    display: inline-block;
+
+    color: #fff;
+    font-size: 2.4em;
+    top:3%;
+    left: 40%;
+    z-index: 99;
+}
+
+
+
+.navbar-brand {
+    margin-left: 18px;
+    margin-top: 8px;
+    font-size: 2.2em;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+}
+
+@media (max-width: 990px){
+    #activities{
+        width: 100%;
+    }
+
+}
+.navbar{
+    width: 100%;
+    background-color: navy !important;
+}
+
+.heading{
+    position: relative;
+    left: 0px;
+    padding: 0px;
+}
+
+.navbar-brand{
+    margin-bottom: .8em;
+}
+
+.activity-body, .activity-user, .activity-date{
+    width: 100%;
+}
+
+.activity-body{
+    font-size: 2em;
+}
+.activity-user, .activity-date{
+    font-size: 1.3em;
+    color: #999;
+    margin-left: 25px;
+}
+
+.activity{
+    border-bottom: 2px solid #efefef;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.hint{
+    font-size: 1em;
+}
+
+.userbtns{
+    padding-left: 15px;
+}
