@@ -9,10 +9,10 @@ block content
             //p.tip-add-message Login or register to add a tip
         div.col-sm-6.col-sm-offset-3.tip-form
             // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
-            if (currentUser)
-                .list-group
-                    each itinerary, i in itineraries
-                        a.list-group-item(href='/itineraries/#{itinerary.id}/')
-                            h4.list-group-item-heading #{itinerary.name}
-                            p.list-group-item-text #{itinerary.date}
-                            p.list-group-item-text #{itinerary.description}
+            //- if (currentUser)
+            .list-group
+                each itinerary, i in itineraries
+                    a.list-group-item(href='/itineraries/#{itinerary.id}/')
+                        h4.list-group-item-heading #{itinerary.name}
+                        p.list-group-item-text #{itinerary.date}
+                        p.list-group-item-text #{itinerary.description}
