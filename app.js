@@ -45,20 +45,5 @@ require('./controllers/auth')(app, passport);          //  Routes for authentica
 require('./controllers/activities')(app);              // Routes for Tips
 require('./controllers/itineraries')(app);             // Route for search
 
-// ERROR HANDLING
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-app.use(function (err, req, res, next) {
-  if (err.status == 404) {
-    //do logging and user-friendly error message display
-    res.redirect('/404.html');
-  } else if (err.status == 500) {
-    res.redirect('/500.html');
-  }
-});
 
 module.exports = app;
