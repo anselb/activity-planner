@@ -14,5 +14,10 @@ block content
                 each itinerary, i in itineraries
                     a.list-group-item(href='/itineraries/#{itinerary.id}/')
                         h4.list-group-item-heading #{itinerary.name}
-                        p.list-group-item-text #{itinerary.date}
+                        // p.list-group-item-text #{itinerary.date}
                         p.list-group-item-text #{itinerary.description}
+
+                        script.
+                            var date = new Date('#{itinerary.date}');
+                            var newDate = date.toUTCString();
+                            $('.date').text(" " + newDate);

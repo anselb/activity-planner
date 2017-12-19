@@ -16,7 +16,7 @@ block content
                     textarea#itinerary-description.form-control(name='description', rows="3", placeholder="Description (optional)") #{itinerary.description}
                 .text-right
                     button.btn.btn-primary(type='submit') Save Itinerary
-                    
+
     script.
         var date = new Date('#{itinerary.date}');
         var newDate = date.toISOString().split('T')[0]

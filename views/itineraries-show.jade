@@ -7,10 +7,10 @@ block content
                 h1
                     | #{itinerary.name}
                     small.date
-                        a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
+                        a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
                             | Edit
                 p #{itinerary.description}
-    
+
     .row
         .col-sm-4.col-sm-offset-2
             #map
@@ -23,12 +23,12 @@ block content
                                 h4.media-heading #{activity.name}
                             p.address #{activity.location}
             a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
-                            
+
 
     script(src='/javascripts/markerclusterer.js')
     script(src='/javascripts/js-map.js')
     script(src='https://maps.googleapis.com/maps/api/js?key=' + process.env.MAP_KEY + '&callback=initMap')
     script.
         var date = new Date('#{itinerary.date}');
-        var newDate = date.toLocaleDateString()
+        var newDate = date.toUTCString();
         $('.date').text(" " + newDate);
