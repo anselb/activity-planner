@@ -30,5 +30,5 @@ block content
     script(src='https://maps.googleapis.com/maps/api/js?key=' + process.env.MAP_KEY + '&callback=initMap')
     script.
         var date = new Date('#{itinerary.date}');
-        var newDate = date.toLocaleDateString()
+        var newDate = date.toUTCString()
         $('.date').text(" " + newDate + " ");
