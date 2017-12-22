@@ -1,0 +1,24 @@
+form {
+  display : inline;
+}
+
+#userAuthForm{
+  margin-bottom: 0px;
+}
+
+#userAuthForm input{
+  margin-right: 1em;
+}
+
+#userAuthForm p{
+  display: inline;
+  margin-right: 1em;
+}
+
+.nav.navbar-nav.navbar-right{
+  height : 50px;
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
