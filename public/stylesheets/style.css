@@ -1,4 +1,12 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
 
+/* Optional: Makes the sample page fill the window. */
+
+*{
+    font-family: Helvetica;
+
+}
 img {
     width: 100px ;
     height: 100px;
@@ -9,7 +17,7 @@ img {
 }
 
 .container {
-    margin-top: 70px;
+    margin-top: 100px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -23,4 +31,33 @@ img {
     left: 0;
     position: relative;
     top: 0;
+}
+
+
+/* ======   GET THE TEXT TO COMMENTS TO SCROLL INDEPENDENTLY */
+
+
+.activitybox-wrapper {
+    /*position: relative;*/
+    height: 100%;
+}
+
+.activity-form,
+.activity-add-message {
+    padding: 18px 60px;
+}
+
+.activitybox *,
+.activity-form-content * {
+    font-size: 1.1em;
+}
+
+.activity-form-content {
+    padding-bottom: 27px;
+    border-bottom: 2px solid #000;
+}
+
+.activity-form-content > div > h2 {
+    font-style: italic;
+    font-size: 1.5em;
 }
