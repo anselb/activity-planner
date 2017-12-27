@@ -9,8 +9,7 @@ block content
                     small.date
                     a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
                         | Edit
-                p #{itinerary.description}
-    
+
     .row
         .col-sm-4.col-sm-offset-2
             #map
@@ -23,7 +22,9 @@ block content
                                 h4.media-heading #{activity.name}
                             p.address #{activity.location}
             a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
-                            
+            a.btn.btn-primary(href="/itineraries/#{itinerary.id}", role="button")   
+                        | Delete
+    
 
     script(src='/javascripts/markerclusterer.js')
     script(src='/javascripts/js-map.js')
