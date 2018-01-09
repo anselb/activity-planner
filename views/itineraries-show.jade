@@ -7,8 +7,9 @@ block content
                 h1
                     | #{itinerary.name}
                     small.date
-                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
                         | Edit
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
 
     .row
         .col-sm-4.col-sm-offset-2
@@ -21,10 +22,9 @@ block content
                             a(href='#{activity.activityUrl}')
                                 h4.media-heading #{activity.name}
                             p.address #{activity.location}
-            a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
-            a.btn.btn-primary(href="/itineraries/#{itinerary.id}", role="button")   
-                        | Delete
-    
+                            a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete", role="button")
+                              | Delete
+
 
     script(src='/javascripts/markerclusterer.js')
     script(src='/javascripts/js-map.js')

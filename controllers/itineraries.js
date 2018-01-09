@@ -65,10 +65,10 @@ module.exports = function (app) {
     });
 
     // DELETE itinerary - yes
-    app.delete('/itineraries/:id', function (req, res) {
+    app.get('/itineraries/:id/delete', function (req, res) {
         Itinerary.findById(req.params.id).then((itinerary) => {
             itinerary.destroy(function (result) {});
-            res.send();
+            res.redirect('/');
         })
     })
 }
