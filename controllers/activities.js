@@ -82,8 +82,9 @@ module.exports = function(app) {
         Activity.findById(req.params.actId).then((activity) => {
             activity.destroy(function (result) {
               console.log(req.params.itinId);
-              res.redirect('/itineraries/' + req.params.itinId);
             });
+            res.send(JSON.stringify({success : 'Updated Successfully', status : 200, redirect : '/itineraries/' + req.params.itinId + '/'}));
+
         })
     })
 }
