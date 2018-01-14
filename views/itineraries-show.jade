@@ -22,8 +22,9 @@ block content
                             a(href='#{activity.activityUrl}')
                                 h4.media-heading #{activity.name}
                             p.address #{activity.location}
-                            a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete", role="button")
-                              | Delete
+                            button(type='button').activity-delete.btn-xs.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete") Delete Activity
+                            // a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete", role="button")
+                              // | Delete
 
 
     script(src='/javascripts/markerclusterer.js')

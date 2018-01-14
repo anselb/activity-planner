@@ -21,15 +21,16 @@ $(document).ready(function(){
             });
   });
 
-  $('.activity-delete').click(function(){
+  $('.activity-delete').click(function(e){
     e.preventDefault();
-    // var tipId = $(this).parent('.tip').children('.tip-id').text();
-    // var thisForm = $(this);
+    var thisButton = $(this);
+    //'/itineraries/:itinId/activities/:actId/delete'
+    //(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete"
     $.ajax({
-      url: '/itineraries/' + parseInt(itinId[1]),
-      type: 'DELETE'
+      url: thisButton.attr('href'),
+      type: 'GET'
       }).done(function(){
-        thisForm.parent('/itineraries/').remove();
+        thisButton.closest('.media-body').remove();
       })
     });
 });
