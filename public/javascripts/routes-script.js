@@ -21,4 +21,15 @@ $(document).ready(function(){
             });
   });
 
+  $('.activity-delete').click(function(){
+    e.preventDefault();
+    // var tipId = $(this).parent('.tip').children('.tip-id').text();
+    // var thisForm = $(this);
+    $.ajax({
+      url: '/itineraries/' + parseInt(itinId[1]),
+      type: 'DELETE'
+      }).done(function(){
+        thisForm.parent('/itineraries/').remove();
+      })
+    });
 });
