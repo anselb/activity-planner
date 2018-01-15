@@ -78,10 +78,13 @@ module.exports = function(app) {
     });
 
     // DELETE activity - yes, can remove from itinerary
-    app.delete('/itineraries/:itinId/activities/:actId', function (req, res) {
+    app.get('/itineraries/:itinId/activities/:actId/delete', function (req, res) {
         Activity.findById(req.params.actId).then((activity) => {
-            activity.destroy(function (result) {});
-            res.send();
+            activity.destroy(function (result) {
+              console.log(req.params.itinId);
+            });
+            res.send(JSON.stringify({success : 'Updated Successfully', status : 200, redirect : '/itineraries/' + req.params.itinId + '/'}));
+
         })
     })
 }

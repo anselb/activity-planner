@@ -7,23 +7,36 @@ block content
                 h1
                     | #{itinerary.name}
                     small.date
-                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button") 
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
                         | Edit
-                p #{itinerary.description}
-    
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
+
     .row
         .col-sm-4.col-sm-offset-2
             #map
         .col-sm-4
+
             if (activities)
                 each activity in activities
+
                     .media
                         .media-body
                             a(href='#{activity.activityUrl}')
-                                h4.media-heading #{activity.name}
+
+                            h4.media-heading #{activity.name}
                             p.address #{activity.location}
-            a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
-                            
+
+                            // if (currentUser.id == tip.UserId)
+                            form.activity-delete
+                                  .text-right.col-xs-2
+                                  p.itinerary-id(hidden)=itinerary.id
+                                  p.activity-id(hidden)=activity.id
+                                  button(type="Submit").activity-delete.btn-xs.btn-primary Delete Activity
+
+                            // button(type='button').activity-delete.btn-xs.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete") Delete Activity
+                            // a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete", role="button")
+                              // | Delete
+
 
     script(src='/javascripts/markerclusterer.js')
     script(src='/javascripts/js-map.js')

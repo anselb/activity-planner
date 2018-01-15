@@ -21,4 +21,18 @@ $(document).ready(function(){
             });
   });
 
+  $('.activity-delete').submit(function(e){
+    e.preventDefault();
+    var activityId = $(this).children('.activity-id').text();
+    var itineraryId = $(this).children('.itinerary-id').text();
+    var thisForm = $(this);
+    //'/itineraries/:itinId/activities/:actId/delete'
+    //(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete"
+    $.ajax({
+      url: '/itineraries/'+itineraryId + '/activities/' + activityId+'/delete',
+      type: 'GET'
+    }).done(function(data){
+        thisForm.closest('.media').remove();
+      })
+    });
 });
