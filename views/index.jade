@@ -3,16 +3,22 @@ extends layout
 block content
     div.row
 
-        // KEEP CONTENT TO THE LEFT
         // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
         if (!currentUser)
-            //p.tip-add-message Login or register to add a tip
-        div.col-sm-6.col-sm-offset-3.tip-form
+            //p.itinerary-add-message Login or register
+        div.col-sm-6.col-sm-offset-3.itinerary-form
             // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
             //- if (currentUser)
             .list-group
                 each itinerary, i in itineraries
-                    a.list-group-item(href='/itineraries/#{itinerary.id}/')
-                        h4.list-group-item-heading #{itinerary.name}
-                        p.list-group-item-text #{itinerary.date}
-                        p.list-group-item-text #{itinerary.description}
+                   .itinerary-list-container
+                      .itinerary-list-container-body
+                        a.list-group-item(href='/itineraries/#{itinerary.id}/')
+                            h4.list-group-item-heading #{itinerary.name}
+                            p.list-group-item-text #{itinerary.date}
+                            p.list-group-item-text #{itinerary.description}
+                        form.itinerary-delete
+                            p.itinerary-id(hidden)=itinerary.id
+                            .text-right.col-xs-2
+                                // span.glyphicon.glyphicon-trash
+                                button.itinerary-delete.glyphicon.glyphicon-trash.btn.btn-primary(type="Submit")
