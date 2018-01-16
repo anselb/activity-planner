@@ -5,11 +5,16 @@
 
 *{
     font-family: Helvetica;
-
 }
+
 img {
     width: 100px ;
     height: 100px;
+}
+
+.activity.id{
+  color: #a4a4a4;
+
 }
 
 .navbar-brand {
@@ -61,3 +66,20 @@ img {
     font-style: italic;
     font-size: 1.5em;
 }
+
+.activity-form{
+  color: #a4a4a4;
+}
+.itinerary-list-container-body{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .list-group-item:first-child {
+    border: none;
+  }
