@@ -36,5 +36,9 @@ block content
     script(src='https://maps.googleapis.com/maps/api/js?key=' + process.env.MAP_KEY + '&callback=initMap')
     script.
         var date = new Date('#{itinerary.date}');
-        var newDate = date.toUTCString()
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        options.timeZone = 'UTC';
+        options.timeZoneName = 'short';
+        var newDate = date.toLocaleDateString('en-US', options)
+        console.log(date.toLocaleDateString('en-US', options));
         $('.date').text(" " + newDate + " ");
