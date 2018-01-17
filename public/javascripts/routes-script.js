@@ -35,4 +35,18 @@ $(document).ready(function(){
         thisForm.closest('.media').remove();
       })
     });
+
+    $('.itinerary-delete').submit(function(e){
+      e.preventDefault();
+      var itineraryId = $(this).children('.itinerary-id').text();
+      var thisForm = $(this);
+      //'/itineraries/:itinId/activities/:actId/delete'
+      //(href="/itineraries/#{itinerary.id}/delete"
+      $.ajax({
+        url: '/itineraries/'+itineraryId + '/delete',
+        type: 'GET'
+      }).done(function(data){
+          thisForm.closest('.media').remove();
+        })
+      });
 });

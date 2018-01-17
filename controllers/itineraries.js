@@ -68,7 +68,8 @@ module.exports = function (app) {
     app.get('/itineraries/:id/delete', function (req, res) {
         Itinerary.findById(req.params.id).then((itinerary) => {
             itinerary.destroy(function (result) {});
-            res.redirect('/');
+            console.log(req.params.id);
         })
+        res.send(JSON.stringify({success : 'Updated Successfully', status : 200}));
     })
 }

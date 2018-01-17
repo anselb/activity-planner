@@ -4,12 +4,11 @@ block content
     .row
         .col-sm-8.col-sm-offset-2
             .page-header
-                h1
-                    | #{itinerary.name}
-                    small.date
-                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
-                        | Edit
-                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
+                h1 #{itinerary.name}
+                small.date
+                a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
+                    | Edit
+                a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
 
     .row
         .col-sm-4.col-sm-offset-2
@@ -26,16 +25,10 @@ block content
                             h4.media-heading #{activity.name}
                             p.address #{activity.location}
 
-                            // if (currentUser.id == tip.UserId)
                             form.activity-delete
-                                  .text-right.col-xs-2
                                   p.itinerary-id(hidden)=itinerary.id
                                   p.activity-id(hidden)=activity.id
                                   button(type="Submit").activity-delete.btn-xs.btn-primary Delete Activity
-
-                            // button(type='button').activity-delete.btn-xs.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete") Delete Activity
-                            // a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/#{activity.id}/delete", role="button")
-                              // | Delete
 
 
     script(src='/javascripts/markerclusterer.js')
