@@ -40,13 +40,14 @@ $(document).ready(function(){
       e.preventDefault();
       var itineraryId = $(this).children('.itinerary-id').text();
       var thisForm = $(this);
+      console.log("Testing Delete");
       //'/itineraries/:itinId/activities/:actId/delete'
       //(href="/itineraries/#{itinerary.id}/delete"
       $.ajax({
         url: '/itineraries/'+itineraryId + '/delete',
         type: 'GET'
       }).done(function(data){
-          thisForm.closest('.media').remove();
+          thisForm.closest('.itinerary-list-container').remove();
         })
       });
 });

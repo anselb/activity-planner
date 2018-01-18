@@ -21,3 +21,16 @@ block content
                             p.itinerary-id(hidden)=itinerary.id
                             .text-right.col-xs-2
                                 button.itinerary-delete.glyphicon.glyphicon-trash.btn.btn-primary(type="Submit")
+                              script.
+                              // var date = new Date('#{itinerary.date}');
+                              // var newDate = date.toISOString().split('T')[0]
+                              // var newDate = date.toLocaleDateString('en-US', options)
+
+                              var date = new Date('#{itinerary.date}');
+                              var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                              options.timeZone = 'UTC';
+                              options.timeZoneName = 'short';
+                              var newDate = date.toLocaleDateString('en-US', options)
+                              console.log(date.toLocaleDateString('en-US', options));
+                              $('.date').text(" " + newDate + " ");
+                              // document.getElementById("itinerary-date").defaultValue = newDate;
