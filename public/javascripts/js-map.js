@@ -1,9 +1,8 @@
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 function getActivityMarkers(map){
-  let itinId = new RegExp('itineraries\/(.+)\/').exec(window.location.href);
-
-  $.get('/itineraries/' + parseInt(itinId[1]) + '/activities', function(activities){
+  itinId = $('.itinerary-container').attr('id');
+  $.get('/itineraries/' + itinId + '/activities', function(activities){
     var markers = activities.map(function(activity, i) {
         if(activity.location){
           codeLocation(activity.location, function(locationPos){
