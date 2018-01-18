@@ -6,14 +6,16 @@ block content
             .page-header
                 h1 #{itinerary.name}
                 small.date
-                a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
-                    | Edit
-                a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
+                .btncont
+                  a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
+                      | Edit
+                  a.addbtn.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
 
     .row
         .col-sm-4.col-sm-offset-2
             #map
         .col-sm-4
+          h1 #{activity}
 
             if (activities)
                 each activity in activities

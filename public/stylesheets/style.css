@@ -37,6 +37,9 @@ img {
     margin-left: auto;
 }
 
+.addbtn {
+  margin-left: 10px;
+}
 
 #map {
     height: 50%;
@@ -46,6 +49,13 @@ img {
     top: 0;
 }
 
+.btn-cont {
+  /*margin-left: 100px;*/
+  width: auto;
+}
+
+.page-header {
+}
 
 /* ======   GET THE TEXT TO COMMENTS TO SCROLL INDEPENDENTLY */
 
