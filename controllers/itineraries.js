@@ -1,9 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-// require('dotenv').config()
-//
-// let activities = require('../json/activities')
-
 const Activity = require('../db/models/index').Activity;
 const Itinerary = require('../db/models/index').Itinerary;
 
@@ -58,18 +52,14 @@ module.exports = function (app) {
             itinerary.update(req.body);
             res.redirect('/itineraries/' + itinerary.id + '/')
         })
-        // Itinerary.findByIdAndUpdate(req.params.id, req.body, function (err, itinerary) {
-        //     console.log(itinerary)
-        //     res.redirect('/itineraries/' + itinerary.id)
-        // })
     });
 
     // DELETE itinerary - yes
     app.get('/itineraries/:id/delete', function (req, res) {
         Itinerary.findById(req.params.id).then((itinerary) => {
-            itinerary.destroy(function (result) {});
-            console.log(req.params.id);
+            itinerary.destroy(function (result) {
+            });
+          res.send(JSON.stringify({success : 'Updated Successfully', status : 200}));
         })
-        res.send(JSON.stringify({success : 'Updated Successfully', status : 200}));
     })
 }
