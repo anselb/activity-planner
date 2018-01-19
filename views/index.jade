@@ -13,7 +13,7 @@ block content
             //- if (currentUser)
             .list-group
                 each itinerary, i in itineraries
-                   .itinerary-list-container
+                   .itinerary-list-container(id=itinerary._id)
                       .itinerary-list-container-body
                         a.list-group-item(href='/itineraries/#{itinerary.id}/')
                             h4.list-group-item-heading #{itinerary.name}

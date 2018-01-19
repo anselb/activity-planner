@@ -11,6 +11,12 @@ block content
                   a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
                       | Edit
                   a.addbtn.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
+                .itinerary-container(id=itinerary.id)
+                    h1 #{itinerary.name }
+                    small.date
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
+                        | Edit
+                    a.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
 
     .row
         .col-sm-4.col-sm-offset-2
@@ -22,6 +28,8 @@ block content
             if (activities)
                 each activity in activities
                     .media
+
+                    .media(id = activity.id)
                         .media-body
                         a(href=activity.activityUrl)
                             h4.media-heading #{activity.name}
