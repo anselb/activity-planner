@@ -21,13 +21,11 @@ block content
 
             if (activities)
                 each activity in activities
-
                     .media
                         .media-body
-                            a(href=activity.activityUrl)
-
+                        a(href=activity.activityUrl)
                             h4.media-heading #{activity.name}
-                            p.address #{activity.location}
+                              p.address #{activity.location}
 
                             form.activity-delete
                                   p.itinerary-id(hidden)=itinerary.id
