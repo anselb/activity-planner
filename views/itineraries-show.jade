@@ -9,15 +9,16 @@ block content
                 small.date
                 .btncont
                   a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
-                      | Edit
-                  a.addbtn.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add
+                      | Edit Itinerary
+                  a.addbtn.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add New Acitvities
+
                 .itinerary-container(id=itinerary.id)
 
     .row
         .col-sm-4.col-sm-offset-2
             #map
         .col-sm-4
-          h1.activity-class Activity
+          h1.activity-class Activity List
           h1 #{activity}
 
             if (activities)

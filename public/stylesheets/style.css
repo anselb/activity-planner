@@ -12,6 +12,10 @@ img {
     height: 100px;
 }
 
+.activity-class{
+  font-style: bold;
+  font-size: 1.5em;
+}
 .activity.id{
   color: #a4a4a4;
 
@@ -38,7 +42,10 @@ img {
 }
 
 .addbtn {
-  margin-left: 10px;
+  margin-left: 500px;
+  position: relative;
+  justify-content: space-between;
+  align-items: right;
 }
 
 #map {
