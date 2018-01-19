@@ -7,6 +7,7 @@ block content
         // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
         if (!currentUser)
             //p.itinerary-add-message Login or register
+        h1.myclaas Itinerary List
         div.col-sm-6.col-sm-offset-3.itinerary-form
             // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
             //- if (currentUser)
@@ -23,15 +24,11 @@ block content
                             .text-right.col-xs-2
                                 button.itinerary-delete.glyphicon.glyphicon-trash.btn.btn-primary(type="Submit")
                               script.
-                              // var date = new Date('#{itinerary.date}');
-                              // var newDate = date.toISOString().split('T')[0]
-                              // var newDate = date.toLocaleDateString('en-US', options)
-
-                              var date = new Date('#{itinerary.date}');
-                              var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                              options.timeZone = 'UTC';
-                              options.timeZoneName = 'short';
-                              var newDate = date.toLocaleDateString('en-US', options)
-                              console.log(date.toLocaleDateString('en-US', options));
-                              $('.date').text(" " + newDate + " ");
-                              // document.getElementById("itinerary-date").defaultValue = newDate;
+                                var date = new Date('#{itinerary.date}');
+                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                                options.timeZone = 'UTC';
+                                options.timeZoneName = 'short';
+                                var newDate = date.toLocaleDateString('en-US', options)
+                                console.log(date.toLocaleDateString('en-US', options));
+                                $('.date').text(" " + newDate + " ");
+                                // document.getElementById("itinerary-date").defaultValue = newDate;

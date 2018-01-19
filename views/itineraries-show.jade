@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
     .row
         .col-sm-8.col-sm-offset-2
             .page-header
@@ -15,6 +16,7 @@ block content
         .col-sm-4.col-sm-offset-2
             #map
         .col-sm-4
+          h1.activity-class Activity
           h1 #{activity}
 
             if (activities)
@@ -22,7 +24,7 @@ block content
 
                     .media
                         .media-body
-                            a(href='#{activity.activityUrl}')
+                            a(href=activity.activityUrl)
 
                             h4.media-heading #{activity.name}
                             p.address #{activity.location}
