@@ -19,11 +19,14 @@ block content
 
 
     script.
+        var date = new Date('#{itinerary.date}');
+        // var newDate = date.toISOString().split('T')[0]
+        // var newDate = date.toLocaleDateString('en-US', options)
 
         var date = new Date('#{itinerary.date}');
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        options.timeZone = 'UTC';
-        options.timeZoneName = 'short';
+        // options.timeZone = 'UTC';
+        // options.timeZoneName = 'short';
         var newDate = date.toLocaleDateString('en-US', options)
         console.log(date.toLocaleDateString('en-US', options));
         $('.date').text(" " + newDate + " ");
