@@ -4,7 +4,7 @@ block content
     .row
         .col-sm-4.col-sm-offset-4
             form(method="POST" action='/itineraries/#{itinerary.id}?_method=PUT')
-                legend Edit Itinerary
+                legend Edit Plan
                 .form-group
                     label(for='itinerary-name') Name
                     input#itinerary-name.form-control(name='name', placeholder='Name your Itinerary', value='#{itinerary.name}')
@@ -15,13 +15,11 @@ block content
                     label(for='itinerary-body') Description
                     textarea#itinerary-description.form-control(name='description', rows="3", placeholder="Description (optional)") #{itinerary.description}
                 .text-right
-                    button.btn.btn-primary(type='submit') Save Itinerary
+                    button.btn.btn-primary(type='submit') Save Plan
 
 
     script.
         var date = new Date('#{itinerary.date}');
-        // var newDate = date.toISOString().split('T')[0]
-        // var newDate = date.toLocaleDateString('en-US', options)
 
         var date = new Date('#{itinerary.date}');
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
