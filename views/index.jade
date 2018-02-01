@@ -19,7 +19,7 @@ block content
                       .itinerary-list-container-body
                         a.list-group-item(href='/itineraries/#{itinerary.id}/')
                             h4.list-group-item-heading #{itinerary.name}
-                            p.list-group-item-text #{itinerary.date}
+                            p.list-group-item-text #{moment(itinerary.date).format("dddd-MM-DD-YYYY")}
                             p.list-group-item-text #{itinerary.description}
                         form.itinerary-delete
                             p.itinerary-id(hidden)=itinerary.id
@@ -32,5 +32,5 @@ block content
                                 // options.timeZoneName = 'short';
                                 var newDate = date.toLocaleDateString('en-US', options)
                                 console.log(date.toLocaleDateString('en-US', options));
-                                $('.date').text(" " + newDate + " ");
+                                // $('.date').text(" " + newDate + " ");
                                 // document.getElementById("itinerary-date").defaultValue = newDate;
