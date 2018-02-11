@@ -1,14 +1,13 @@
 extends layout
 
 block content
-    if user
+    if (currentUser)
     div.row
         // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
         if (currentUser)
             //p.itinerary-add-message Login or register
         center
-          h1.myclaas List of Awesome Activity Planners
-          br
+          h1.list-of-planners List of Awesome Activity Planners
         div.col-sm-6.col-sm-offset-3.itinerary-form
             // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
             //- if (currentUser)
