@@ -66,7 +66,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // FOR GEO LOCATION START
 
 function getLocation() {
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -77,6 +76,9 @@ function getLocation() {
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
     }
 }
 

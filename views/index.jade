@@ -3,7 +3,6 @@ extends layout
 block content
     if user
     div.row
-
         // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
         if (currentUser)
             //p.itinerary-add-message Login or register
@@ -28,9 +27,5 @@ block content
                               script.
                                 var date = new Date('#{itinerary.date}');
                                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                                // options.timeZone = 'UTC';
-                                // options.timeZoneName = 'short';
                                 var newDate = date.toLocaleDateString('en-US', options)
                                 console.log(date.toLocaleDateString('en-US', options));
-                                // $('.date').text(" " + newDate + " ");
-                                // document.getElementById("itinerary-date").defaultValue = newDate;
