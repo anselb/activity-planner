@@ -2,15 +2,16 @@ extends layout
 
 block content
     .row
-        .col-sm-6.offset-sm-6
             form(action='/itineraries/#{itineraryId}/activities/new')
+              center
                 .form-group
                     label(for='search-term')="Search Term (1 Key Word)"
                     input#search-term(placeholder=' food, drink, or theater', name='term', type='text', value='#{term}')
                 .form-group
                     label(for='search-location')="Location (City or Zip Code)"
                     input#search-location(placeholder= ' SF, NY, DC, or 94107',name='location', type='text', value='#{location}')
-                .text-right
+                    br
+                    br
                     button.btn.btn-primary(type='submit') Search
             
             if (yelpDatas)

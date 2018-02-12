@@ -1,7 +1,7 @@
 extends layout
 
 block content
-
+    if user
     .row
         .col-sm-8.col-sm-offset-2
             .page-header
@@ -9,7 +9,7 @@ block content
                 small.date
                 .btncont
                   a.btn.btn-primary(href="/itineraries/#{itinerary.id}/edit", role="button")
-                      | Edit Itinerary
+                      |Edit My Plan
                   a.addbtn.btn.btn-primary(href="/itineraries/#{itinerary.id}/activities/new", role="button") Add New Acitvities
 
                 .itinerary-container(id=itinerary.id)
@@ -18,7 +18,7 @@ block content
         .col-sm-4.col-sm-offset-2
             #map
         .col-sm-4
-          h1.activity-class Activity List
+          h1.activity-class Awesome Activities
           h1 #{activity}
 
             if (activities)
@@ -34,7 +34,7 @@ block content
                             form.activity-delete
                                   p.itinerary-id(hidden)=itinerary.id
                                   p.activity-id(hidden)=activity.id
-                                  button(type="Submit").activity-delete.btn-xs.btn-primary Delete Activity
+                                  button(type="Submit").activity-delete.btn-xs.btn-primary Not Interested
 
 
     script(src='/javascripts/markerclusterer.js')
@@ -43,8 +43,8 @@ block content
     script.
         var date = new Date('#{itinerary.date}');
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        options.timeZone = 'UTC';
-        options.timeZoneName = 'short';
+        // options.timeZone = 'UTC';
+        // options.timeZoneName = 'short';
         var newDate = date.toLocaleDateString('en-US', options)
         console.log(date.toLocaleDateString('en-US', options));
         $('.date').text(" " + newDate + " ");

@@ -1,13 +1,13 @@
 extends layout
 
 block content
-
+    if (currentUser)
     div.row
-
         // DISPLAY LOGIN OR REGISTER WHEN NOT LOGGED IN
-        if (!currentUser)
+        if (currentUser)
             //p.itinerary-add-message Login or register
-        h1.myclaas Itinerary List
+        center
+          h1.list-of-planners List of Awesome Activity Planners
         div.col-sm-6.col-sm-offset-3.itinerary-form
             // DISPLAY FORM ONLY WHEN USER IS LOGGED IN
             //- if (currentUser)
@@ -17,7 +17,7 @@ block content
                       .itinerary-list-container-body
                         a.list-group-item(href='/itineraries/#{itinerary.id}/')
                             h4.list-group-item-heading #{itinerary.name}
-                            p.list-group-item-text #{itinerary.date}
+                            p.list-group-item-text #{moment(itinerary.date).format("dddd-MM-DD-YYYY")}
                             p.list-group-item-text #{itinerary.description}
                         form.itinerary-delete
                             p.itinerary-id(hidden)=itinerary.id
@@ -26,9 +26,5 @@ block content
                               script.
                                 var date = new Date('#{itinerary.date}');
                                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                                options.timeZone = 'UTC';
-                                options.timeZoneName = 'short';
                                 var newDate = date.toLocaleDateString('en-US', options)
                                 console.log(date.toLocaleDateString('en-US', options));
-                                $('.date').text(" " + newDate + " ");
-                                // document.getElementById("itinerary-date").defaultValue = newDate;

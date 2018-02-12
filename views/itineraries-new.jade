@@ -4,7 +4,7 @@ block content
     .row
         .col-sm-4.col-sm-offset-4
             form(method="POST" action='/itineraries')
-                legend New Itinerary
+                legend New Plan
                 .form-group
                     label(for='itinerary-name') Name
                     input#itinerary-name.form-control(name='name', placeholder='Name your Itinerary')
@@ -15,4 +15,4 @@ block content
                     label(for='itinerary-body') Description
                     textarea#itinerary-description.form-control(name='description', rows="3", placeholder="Description (optional)")
                 .text-right
-                    button.btn.btn-primary(type='submit') Create Itinerary
+                    button.btn.btn-primary(type='submit') Create Plan
