@@ -21,9 +21,12 @@ block content
                             p.list-group-item-text #{itinerary.description}
                         form.itinerary-delete
                             p.itinerary-id(hidden)=itinerary.id
-                            .text-right.col-xs-2
-                                button.itinerary-delete.glyphicon.glyphicon-trash.btn.btn-primary(type="Submit")
-                              script.
+                            // DISPLAY DELETE BUTTON ONLY WHEN CORRECT USER IS LOGGED IN
+                            if (currentUser)
+                                if (currentUser.id == itinerary.UserId)
+                                    .text-right.col-xs-2
+                                        button.itinerary-delete.glyphicon.glyphicon-trash.btn.btn-primary(type="Submit")
+                            script.
                                 var date = new Date('#{itinerary.date}');
                                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                                 var newDate = date.toLocaleDateString('en-US', options)
