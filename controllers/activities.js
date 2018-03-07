@@ -1,7 +1,8 @@
 const yelp = require('yelp-fusion');
 require('dotenv').config();
 
-const YELP_ID = process.env.YELP_ID
+// YELP_ID is deprecated
+// const YELP_ID = process.env.YELP_ID
 const YELP_KEY = process.env.YELP_KEY
 const MEETUP_KEY = process.env.MEETUP_KEY
 const EVENTBRITE_TOKEN = process.env.EVENTBRITE_TOKEN
@@ -35,10 +36,9 @@ module.exports = function(app) {
                 location: queryLocation
             }
 
-            yelp.accessToken(YELP_ID, YELP_KEY).then(response => {
-                const client = yelp.client(response.jsonBody.access_token);
-                return client.search(searchRequest)
-            }).then(response => {
+            const client = yelp.client(YELP_KEY);
+            client.search(searchRequest)
+            .then(response => {
                 return response.jsonBody.businesses
             }).then(result => {
                 res.render('activities-new', { itineraryId: req.params.itinId, term: req.query.term, location: req.query.location, currentUser: req.user, yelpDatas: result });

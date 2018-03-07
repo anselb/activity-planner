@@ -24,6 +24,6 @@
     "sequelize": "^4.27.0",
     "sequelize-cli": "^3.2.0",
     "serve-favicon": "~2.4.5",
-    "yelp-fusion": "^1.0.4"
+    "yelp-fusion": "^2.0.3"
   }
 }
