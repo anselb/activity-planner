@@ -30,8 +30,10 @@ block content
                         a(href=activity.activityUrl)
                             h4.media-heading #{activity.name}
                               p.address #{activity.location}
-
-                            form.activity-delete
+                            // DISPLAY DELETE BUTTON ONLY WHEN CORRECT USER IS LOGGED IN
+                            if (currentUser)
+                              if (currentUser.id == itinerary.UserId) 
+                                form.activity-delete
                                   p.itinerary-id(hidden)=itinerary.id
                                   p.activity-id(hidden)=activity.id
                                   button(type="Submit").activity-delete.btn-xs.btn-primary Not Interested
