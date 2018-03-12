@@ -2,7 +2,7 @@
 https://awesome-activities-planner.herokuapp.com
 
 ## Introduction
-Awesome Activities Planner and Finder is a program that provide exciting stops that match your search through MeetUp and Yelp. View tips created by you and other users on a map of your surroundings.  that others have created for the areas that interest you. You are provided information about the business, meet-up you choose, as well as a Google Map with markers of your current location, the activity. It allows user to create an Itinerary for the activities you wanted to do
+Awesome Activities Planner and Finder is a program that provide exciting stops that match your search through MeetUp and Yelp. View activities created by you and other users on a map of your surroundings.  You are provided information about the business you searched as well as a Google Map with markers of your current location and the Yelp rating of the activity. It allows users to create an Itinerary for the activities they want to do.
 
 This is personal project from Make School. You can reach us at through  ansel.bridgewater@students.makeschool.com and jeff.chiu@students.makeschool.com
 
@@ -16,7 +16,7 @@ This is personal project from Make School. You can reach us at through  ansel.br
 - [Sequelize](http://docs.sequelizejs.com/)
 - [Express](https://expressjs.com/)
 - [Node JS](https://nodejs.org/en/)
-- [Jade/Pug] (https://pugjs.org/api/getting-started.html)
+- [Jade/Pug](https://pugjs.org/api/getting-started.html)
 
 This project also uses a boilerplate CSS theme for bootstrap known
 
@@ -32,17 +32,8 @@ npm start
 This will start an express app at http://localhost:8000.
 
 
-### Production Build
-```
-npm run build
-npm run build:start
-```
-This will create a production build and will start a server at http://localhost:8000/
-
-
-
 ***
-## How to use Awesome Activities Chooser
+## How to use Awesome Activities Planner
 
 It's avaliable at
 https://www.awesome-activities-planner.herokuapp.com
@@ -50,8 +41,8 @@ https://www.awesome-activities-planner.herokuapp.com
 
 
 ### Authors
-- [Jeff Chiu](https://www.linkedin.com/in/jeffchiu1) - Front/Back End
-- [Ansel Bridgewater](ansel.bridgewater@students.makeschool.com) - Front/Back End
+- [Jeff Chiu](https://www.linkedin.com/in/jeffchiu1) - Full Stack Engineer
+- [Ansel Bridgewater](ansel.bridgewater@students.makeschool.com) - Full Stack Engineer
 
 
 ### License 
