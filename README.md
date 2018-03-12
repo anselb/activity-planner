@@ -2,7 +2,7 @@
 https://awesome-activities-planner.herokuapp.com
 
 ## Introduction
-Awesome Activities Planner and Finder is a program that provide exciting stops that match your search through MeetUp and Yelp. View activities created by you and other users on a map of your surroundings.  You are provided information about the business you searched as well as a Google Map with markers of your current location and the Yelp rating activity. It allows users to create an Itinerary for the activities they wanted to do
+Awesome Activities Planner and Finder is a program that provide exciting stops that match your search through MeetUp and Yelp. View activities created by you and other users on a map of your surroundings.  You are provided information about the business you searched as well as a Google Map with markers of your current location and the Yelp rating of the activity. It allows users to create an Itinerary for the activities they want to do.
 
 This is personal project from Make School. You can reach us at through  ansel.bridgewater@students.makeschool.com and jeff.chiu@students.makeschool.com
 
