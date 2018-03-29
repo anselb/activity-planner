@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test" : "mocha"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -26,5 +27,9 @@
     "sequelize-cli": "^3.2.0",
     "serve-favicon": "~2.4.5",
     "yelp-fusion": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai-http": "^4.0.0",
+    "mocha": "^5.0.5"
   }
 }
